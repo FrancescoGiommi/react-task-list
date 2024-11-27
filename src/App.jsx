@@ -109,11 +109,23 @@ function App() {
 
   /* Backlog map */
   const backlogMap = () => {
-    return stateBacklog.map((item) => <li key={item.id}>{item.title}</li>);
+    return stateBacklog.map((item) => (
+      <li key={item.id}>
+        {item.title}
+        {`Priority:${item.priority}`}
+        {`Est.time:${item.estimatedTime}`}
+      </li>
+    ));
   };
   /* In progress map */
   const inProgressMap = () => {
-    return stateInProgress.map((item) => <li key={item.id}>{item.title}</li>);
+    return stateInProgress.map((item) => (
+      <li key={item.id}>
+        {item.title}
+        {`Priority:${item.priority}`}
+        {`Est.time:${item.estimatedTime}`}
+      </li>
+    ));
   };
 
   /* Completed filter */
@@ -126,7 +138,13 @@ function App() {
 
   /* Completed map */
   const completedMap = () => {
-    return stateCompleted.map((item) => <li key={item.id}>{item.title}</li>);
+    return stateCompleted.map((item) => (
+      <li key={item.id}>
+        {item.title}
+        {`Priority:${item.priority}`}
+        {`Est.time:${item.estimatedTime}`}
+      </li>
+    ));
   };
 
   return (
