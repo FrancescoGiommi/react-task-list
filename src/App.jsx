@@ -88,18 +88,47 @@ function App() {
     },
   ];
 
-  const backlogState = () => {
-    return tasks.filter((item) => {
-      item.state === "backlog";
-    });
+  /* Backlog filter */
+  const filterBacklog = () => {
+    const filteredBacklog = tasks.filter((item) => item.state === "backlog");
+    return filteredBacklog;
   };
 
+  /* In progress filter */
+  const filterInProgress = () => {
+    const filteredInProgress = tasks.filter(
+      (item) => item.state === "in_progress"
+    );
+    return filteredInProgress;
+  };
+
+  const stateBacklog = filterBacklog(tasks);
+  const stateInProgress = filterInProgress(tasks);
+
+  /* Backlog map */
+  const backlogMap = () => {
+    const backlogStatus = stateBacklog.map((item) => item);
+    return backlogStatus;
+  };
+
+  /* In progress map */
+  const inProgressMap = () => {
+    const inProgressStatus = stateInProgress.map((item) => item);
+    return inProgressStatus;
+  };
+
+  const backlogItem = backlogMap(tasks);
+  const inProgressItem = inProgressMap(tasks);
+  console.log(backlogItem);
+  console.log(inProgressItem);
   return (
     <>
       <h1>Task Manager</h1>
       <h2>Current Tasks (4)</h2>
-
-      {backlogState()}
+      {backlogItem}
+      {inProgressItem}
+      <hr />
+      <h2>Completed Tasks (6)</h2>
     </>
   );
 }
