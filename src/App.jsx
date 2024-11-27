@@ -114,7 +114,7 @@ function App() {
         <div
           style={{ display: "block", marginBottom: "5px", marginTop: "10px" }}
         >
-          {item.title}
+          <strong>{item.title}</strong>
         </div>
         <div style={{ display: "block" }}>{`Priority:${item.priority}`}</div>
         {`Est.time:${item.estimatedTime}`}
@@ -126,9 +126,13 @@ function App() {
     return stateInProgress.map((item) => (
       <li key={item.id}>
         <div
-          style={{ display: "block", marginBottom: "5px", marginTop: "10px" }}
+          style={{
+            display: "block",
+            marginBottom: "5px",
+            marginTop: "10px",
+          }}
         >
-          {item.title}
+          <strong>{item.title}</strong>
         </div>
         <div
           style={{ display: "block", marginBottom: "5px" }}
@@ -153,7 +157,7 @@ function App() {
         <div
           style={{ display: "block", marginBottom: "5px", marginTop: "10px" }}
         >
-          {item.title}
+          <strong>{item.title}</strong>
         </div>
         <div style={{ display: "block" }}>{`Priority:${item.priority}`}</div>
         {`Est.time:${item.estimatedTime}`}
@@ -163,7 +167,9 @@ function App() {
 
   return (
     <>
-      <h1>Task Manager</h1>
+      <div style={{ backgroundColor: "cyan", top: "0px" }}>
+        <h1>Task Manager</h1>
+      </div>
       <h2>Current Tasks (4)</h2>
       <ul>
         {backlogMap()}
