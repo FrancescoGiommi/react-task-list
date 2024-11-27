@@ -92,8 +92,8 @@ function App() {
 
   /* Backlog filter */
   const filterBacklog = () => {
-    const filteredBacklog = tasks.filter((item) => item.state === "backlog");
-    return filteredBacklog;
+    const filterBacklog = tasks.filter((item) => item.state === "backlog");
+    return filterBacklog;
   };
 
   /* In progress filter */
@@ -116,8 +116,18 @@ function App() {
     return stateInProgress.map((item) => <li key={item.id}>{item.title}</li>);
   };
 
-  console.log(backlogMap());
-  console.log(inProgressMap);
+  /* Completed filter */
+  const filterCompleted = () => {
+    const filterCompleted = tasks.filter((item) => item.state === "completed");
+    return filterCompleted;
+  };
+
+  const stateCompleted = filterCompleted();
+
+  /* Completed map */
+  const completedMap = () => {
+    return stateCompleted.map((item) => <li key={item.id}>{item.title}</li>);
+  };
 
   return (
     <>
@@ -130,6 +140,7 @@ function App() {
 
       <hr />
       <h2>Completed Tasks (6)</h2>
+      <ul>{completedMap()}</ul>
     </>
   );
 }
