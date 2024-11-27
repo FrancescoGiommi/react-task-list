@@ -111,8 +111,8 @@ function App() {
   const backlogMap = () => {
     return stateBacklog.map((item) => (
       <li key={item.id}>
-        {item.title}
-        {`Priority:${item.priority}`}
+        <div style={{ display: "block" }}>{item.title}</div>
+        <div style={{ display: "block" }}>{`Priority:${item.priority}`}</div>
         {`Est.time:${item.estimatedTime}`}
       </li>
     ));
@@ -121,8 +121,8 @@ function App() {
   const inProgressMap = () => {
     return stateInProgress.map((item) => (
       <li key={item.id}>
-        {item.title}
-        {`Priority:${item.priority}`}
+        <div style={{ display: "block" }}>{item.title}</div>
+        <div style={{ display: "block" }}>{`Priority:${item.priority}`}</div>
         {`Est.time:${item.estimatedTime}`}
       </li>
     ));
@@ -140,8 +140,8 @@ function App() {
   const completedMap = () => {
     return stateCompleted.map((item) => (
       <li key={item.id}>
-        {item.title}
-        {`Priority:${item.priority}`}
+        <div style={{ display: "block" }}>{item.title}</div>
+        <div style={{ display: "block" }}>{`Priority:${item.priority}`}</div>
         {`Est.time:${item.estimatedTime}`}
       </li>
     ));
