@@ -110,11 +110,20 @@ function App() {
   /* Backlog map */
   const backlogMap = () => {
     return stateBacklog.map((item) => (
-      <li key={item.id}>
-        <div
-          style={{ display: "block", marginBottom: "5px", marginTop: "10px" }}
-        >
+      <li style={{ listStyle: "none" }} key={item.id}>
+        <div style={{ display: "block", marginTop: "10px" }}>
           <strong>{item.title}</strong>
+          <div
+            style={{
+              margin: "5px",
+              display: "inline-block",
+              backgroundColor: "brown",
+              padding: "5px",
+              color: "white",
+            }}
+          >
+            {item.state}
+          </div>
         </div>
         <div style={{ display: "block" }}>{`Priority:${item.priority}`}</div>
         {`Est.time:${item.estimatedTime}`}
@@ -124,15 +133,25 @@ function App() {
   /* In progress map */
   const inProgressMap = () => {
     return stateInProgress.map((item) => (
-      <li key={item.id}>
+      <li style={{ listStyle: "none" }} key={item.id}>
         <div
           style={{
             display: "block",
-            marginBottom: "5px",
             marginTop: "10px",
           }}
         >
           <strong>{item.title}</strong>
+          <div
+            style={{
+              margin: "5px",
+              display: "inline-block",
+              backgroundColor: "brown",
+              padding: "5px",
+              color: "white",
+            }}
+          >
+            {item.state}
+          </div>
         </div>
         <div
           style={{ display: "block", marginBottom: "5px" }}
@@ -153,11 +172,20 @@ function App() {
   /* Completed map */
   const completedMap = () => {
     return stateCompleted.map((item) => (
-      <li key={item.id}>
-        <div
-          style={{ display: "block", marginBottom: "5px", marginTop: "10px" }}
-        >
+      <li style={{ listStyle: "none" }} key={item.id}>
+        <div style={{ marginTop: "10px" }}>
           <strong>{item.title}</strong>
+          <div
+            style={{
+              margin: "5px",
+              display: "inline-block",
+              backgroundColor: "brown",
+              padding: "5px",
+              color: "white",
+            }}
+          >
+            {item.state}
+          </div>
         </div>
         <div style={{ display: "block" }}>{`Priority:${item.priority}`}</div>
         {`Est.time:${item.estimatedTime}`}
@@ -167,7 +195,7 @@ function App() {
 
   return (
     <>
-      <div style={{ backgroundColor: "cyan", top: "0px" }}>
+      <div style={{ backgroundColor: "cyan" }}>
         <h1>Task Manager</h1>
       </div>
       <h2>Current Tasks (4)</h2>
