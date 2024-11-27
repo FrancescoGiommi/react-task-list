@@ -88,6 +88,8 @@ function App() {
     },
   ];
 
+  let i = 0;
+
   /* Backlog filter */
   const filterBacklog = () => {
     const filteredBacklog = tasks.filter((item) => item.state === "backlog");
@@ -96,37 +98,36 @@ function App() {
 
   /* In progress filter */
   const filterInProgress = () => {
-    const filteredInProgress = tasks.filter(
+    const filterInProgress = tasks.filter(
       (item) => item.state === "in_progress"
     );
-    return filteredInProgress;
+    return filterInProgress;
   };
 
-  const stateBacklog = filterBacklog(tasks);
-  const stateInProgress = filterInProgress(tasks);
+  const stateBacklog = filterBacklog();
+  const stateInProgress = filterInProgress();
 
   /* Backlog map */
   const backlogMap = () => {
-    const backlogStatus = stateBacklog.map((item) => item);
-    return backlogStatus;
+    return stateBacklog.map((item) => <li key={item.id}>{item.title}</li>);
   };
-
   /* In progress map */
   const inProgressMap = () => {
-    const inProgressStatus = stateInProgress.map((item) => item);
-    return inProgressStatus;
+    return stateInProgress.map((item) => <li key={item.id}>{item.title}</li>);
   };
 
-  const backlogItem = backlogMap(tasks);
-  const inProgressItem = inProgressMap(tasks);
-  console.log(backlogItem);
-  console.log(inProgressItem);
+  console.log(backlogMap());
+  console.log(inProgressMap);
+
   return (
     <>
       <h1>Task Manager</h1>
       <h2>Current Tasks (4)</h2>
-      {backlogItem}
-      {inProgressItem}
+      <ul>
+        {backlogMap()}
+        {inProgressMap()}
+      </ul>
+
       <hr />
       <h2>Completed Tasks (6)</h2>
     </>
