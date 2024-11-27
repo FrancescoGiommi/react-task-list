@@ -125,8 +125,8 @@ function App() {
             {item.state}
           </div>
         </div>
-        <div style={{ display: "block" }}>{`Priority:${item.priority}`}</div>
-        {`Est.time:${item.estimatedTime}`}
+        <div style={{ display: "block" }}>{`Priority: ${item.priority}`}</div>
+        {`Est.time: ${item.estimatedTime}`}
       </li>
     ));
   };
@@ -155,8 +155,8 @@ function App() {
         </div>
         <div
           style={{ display: "block", marginBottom: "5px" }}
-        >{`Priority:${item.priority}`}</div>
-        {`Est.time:${item.estimatedTime}`}
+        >{`Priority: ${item.priority}`}</div>
+        {`Est.time : ${item.estimatedTime}`}
       </li>
     ));
   };
@@ -187,8 +187,8 @@ function App() {
             {item.state}
           </div>
         </div>
-        <div style={{ display: "block" }}>{`Priority:${item.priority}`}</div>
-        {`Est.time:${item.estimatedTime}`}
+        <div style={{ display: "block" }}>{`Priority: ${item.priority}`}</div>
+        {`Est.time: ${item.estimatedTime}`}
       </li>
     ));
   };
